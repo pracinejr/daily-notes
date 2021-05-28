@@ -18,3 +18,15 @@ const notes = [
 ];
 
 console.log(notes);
+
+const noteAboutToday = {
+  id: 3,
+  subject:
+    "Practiced some function writing this morning and now I'm working on completing chapter 2",
+  date: "5/28/21",
+  feeling: "Still pretty pumped about coding.",
+  timeInMinutes: 120,
+};
+
+notes.push(noteAboutToday);
+console.log(notes);
