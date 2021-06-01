@@ -42,10 +42,61 @@ notes.push(noteAboutToday);
 //   );
 // }
 
-const searchTerm = "Still pretty pumped about coding.";
+// const searchTerm = "Still pretty pumped about coding.";
 
-for (const note of notes) {
-  if (note.feeling === searchTerm) {
-    console.log(note);
-  }
-}
+// for (const note of notes) {
+//   if (note.feeling === searchTerm) {
+//     console.log(note);
+//   }
+// }
+const createNote = (noteObj) => {
+  const lastIndex = notes.length - 1;
+  const currentLastNote = notes[lastIndex];
+  const maxId = currentLastNote.id;
+  const idForNewNote = maxId + 1;
+
+  noteObj.id = idForNewNote;
+
+  notes.push(noteObj);
+};
+
+// Create a new note object
+const moreNewerNote = {
+  subject: "Learned teamwork",
+  date: "6/1/21",
+  feeling: "Awesome.",
+  timeInMinutes: 300,
+};
+
+// Specify object as argument for function
+//         |
+//         |
+//         V
+createNote(moreNewerNote);
+// console.log(moreNewerNote);
+
+const createNoteDate = (noteCurrentDate) => {
+  const currentDate = new Date();
+  const dateTime =
+    currentDate.getMonth() +
+    1 +
+    "/" +
+    (currentDate.getDay() - 1) +
+    "/" +
+    currentDate.getFullYear() +
+    " " +
+    "@" +
+    " " +
+    currentDate.getHours() +
+    ":" +
+    currentDate.getMinutes() +
+    ":" +
+    currentDate.getSeconds();
+  const dateForNewNote = dateTime;
+
+  noteCurrentDate.dateOfEntry = dateForNewNote;
+  notes.push(noteCurrentDate);
+};
+
+createNoteDate(moreNewerNote);
+console.log(moreNewerNote);
