@@ -17,7 +17,7 @@ const notes = [
   },
 ];
 
-console.log(notes);
+// console.log(notes);
 
 const noteAboutToday = {
   id: 3,
@@ -29,4 +29,15 @@ const noteAboutToday = {
 };
 
 notes.push(noteAboutToday);
-console.log(notes);
+// console.log(notes);
+
+for (const note of notes) {
+  console.log(
+    `Note ${note.id}
+  ${note.date}
+  ${note.subject}
+  I spent ${note.timeInMinutes}min working on it.
+  ${note.feeling}
+  --------------`
+  );
+}
