@@ -31,13 +31,21 @@ const noteAboutToday = {
 notes.push(noteAboutToday);
 // console.log(notes);
 
+// for (const note of notes) {
+//   console.log(
+//     `Note ${note.id}
+//   ${note.date}
+//   ${note.subject}
+//   I spent ${note.timeInMinutes}min working on it.
+//   ${note.feeling}
+//   --------------`
+//   );
+// }
+
+const searchTerm = "Still pretty pumped about coding.";
+
 for (const note of notes) {
-  console.log(
-    `Note ${note.id}
-  ${note.date}
-  ${note.subject}
-  I spent ${note.timeInMinutes}min working on it.
-  ${note.feeling}
-  --------------`
-  );
+  if (note.feeling === searchTerm) {
+    console.log(note);
+  }
 }
